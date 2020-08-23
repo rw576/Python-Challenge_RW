@@ -3,7 +3,7 @@ import os
 import csv
 
 #connect directory
-csvpath = Resources/budget_data.csv
+csvpath = os.path.join('Resources', 'budget_data.csv')
 with open(csvpath, 'r') as csvfile:
 
     reader = csv.reader(csvfile, delimiter=',')
