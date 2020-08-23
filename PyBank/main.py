@@ -3,7 +3,7 @@ import os
 import csv
 
 #connect directory
-csvpath = PyBank/Resources/budget_data.csv
+csvpath = Resources/budget_data.csv
 with open(csvpath, 'r') as csvfile:
 
     reader = csv.reader(csvfile, delimiter=',')
@@ -30,10 +30,10 @@ with open(csvpath, 'r') as csvfile:
 
 #Average change in "Profit/Losses"
 i = 0
-    for i in range(len(revenue) - 1):
-        profit_loss = int(revenue[i+1]) - int(revenue[i])
-        revenue_change.append(profit_loss)
-        Total = sum(revenue_change)
+for i in range(len(revenue) - 1):
+    profit_loss = int(revenue[i+1]) - int(revenue[i])
+    revenue_change.append(profit_loss)
+    Total = sum(revenue_change)
 
     #print(revenue_change)
 
@@ -47,7 +47,7 @@ i = 0
     month_increase = month[k+1]
 
 #Greates decrease in losses
-     profit_decrease = min(revenue_change)
+    profit_decrease = min(revenue_change)
     print(profit_decrease)
     j = revenue_change.index(profit_decrease)
     month_decrease = month[j+1]
