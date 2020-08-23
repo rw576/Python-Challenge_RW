@@ -4,11 +4,10 @@ import csv
 
 #connect directory
 csvpath = os.path.join('Resources', 'election_data.csv')
-with open(csvpath, 'r') as csvfile:
+with open(csvpath, newline='') as csvfile:
 
-    reader = csv.reader(csvfile, delimiter=',')
-    csv_header = next(reader)
-    print(reader)
+    csvreader = csv.reader(csvfile, delimiter=',')
+    csv_header = next(csvreader)
 
 #set variables
 Votes = []
@@ -73,11 +72,11 @@ print(f"Election Results", file=text_file)
 print(f"-----------------------------------", file=text_file) 
 print(f"Total Votes: {Total_Votes}", file=text_file)
 print(f"-----------------------------------", file=text_file) 
-print(f"Khan: {Khan_Percent}% ({Khan_Votes})"), file=text_file)
-print(f"Correy: {Correy_Percent}% ({Correy_Votes})"), file=text_file)
-print(f"Li: {Li_Percent}% ({Li_Votes})"), file=text_file)
-print(f"OTooley: {OTooley_Percent}% ({OTooley_Votes})"), file=text_file)
+print(f"Khan: {Khan_Percent}% ({Khan_Votes})", file=text_file)
+print(f"Correy: {Correy_Percent}% ({Correy_Votes})", file=text_file)
+print(f"Li: {Li_Percent}% ({Li_Votes})", file=text_file)
+print(f"OTooley: {OTooley_Percent}% ({OTooley_Votes})", file=text_file)
 print(f"-----------------------------------", file=text_file)
-print(f"winner: {winner}"), file=text_file)
+print(f"winner: {winner}", file=text_file)
 print(f"-----------------------------------")
 
