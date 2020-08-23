@@ -5,24 +5,25 @@ import csv
 #connect directory
 csvpath = os.path.join('Resources', 'election_data.csv')
 with open(csvpath, newline='') as csvfile:
-
     csvreader = csv.reader(csvfile, delimiter=',')
+    print(csvreader)
     csv_header = next(csvreader)
+    #for row in csvreader:
 
 #set variables
-Votes = []
-County = []
-Candidates = []
-Khan = []
-Correy = []
-Li = []
-OTooley = []
+    for row in csvreader:
+        Votes = []
+        County = []
+        Candidates = []
+        Khan = []
+        Correy = []
+        Li = []
+        OTooley = []
 
 #Setting Votes, Candidates, and County
-for row in csvreader:
-    Votes.append(int(row[0]))
-    County.append(row[1])
-    Candidates.append(row[2])
+Votes.append(int(row[0]))
+County.append(row[1])
+Candidates.append(row[2])
 
 #Calculating Total Votes
 Total_Votes = (len(Votes))
@@ -79,4 +80,4 @@ print(f"OTooley: {OTooley_Percent}% ({OTooley_Votes})", file=text_file)
 print(f"-----------------------------------", file=text_file)
 print(f"winner: {winner}", file=text_file)
 print(f"-----------------------------------")
-
+text_file.close()
